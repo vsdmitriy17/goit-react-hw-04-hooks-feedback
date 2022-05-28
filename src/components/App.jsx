@@ -10,8 +10,8 @@ export default function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const feedBackIncrement = option => {
-    switch(option) {
+  const feedBackIncrement = name => {
+    switch(name) {
       case 'good':
         setGood(prevState => prevState + 1);
         break;
@@ -23,6 +23,9 @@ export default function App() {
       case 'bad':
         setBad(prevState => prevState + 1);
         break;
+      
+      default:
+        return;
     }
   };
 
@@ -34,13 +37,13 @@ export default function App() {
     return Math.round((good * 100 / (good + neutral + bad)));
   };
 
-  const stateKeys = ['good', 'neutral', 'bad'];
+  const nameBtn = ['good', 'neutral', 'bad'];
 
   return (
     <div className={styles.container}>
         <SectionTitle title="Please leave feedback">
             <Feedback
-                options={stateKeys}
+                options={nameBtn}
                 onLeaveFeedback={feedBackIncrement}
             />
         </SectionTitle>
