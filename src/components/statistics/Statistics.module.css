@@ -1,0 +1,8 @@
+.statistics_text:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.statistics_data {
+    font-weight: 600;
+    color:blue;
+}
